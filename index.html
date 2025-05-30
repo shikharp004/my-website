@@ -1,125 +1,82 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Family</title>
+  <title>Login - My Family Site</title>
   <style>
     body {
       margin: 0;
-      padding: 40px;
+      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #e0eafc, #cfdef3);
-      color: #333;
+      background-image: url('login-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      width: 300px;
       text-align: center;
     }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 40px;
+    .login-box h2 {
+      margin-bottom: 20px;
       color: #2c3e50;
     }
 
-    .family-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
+    .login-box input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
 
-    .member {
-      background-color: white;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      width: 300px;
-      transition: transform 0.3s ease;
-    }
-
-    .member:hover {
-      transform: scale(1.05);
-    }
-
-    .member img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-
-    .name {
-      font-size: 1.5em;
+    .login-box button {
+      width: 95%;
+      padding: 10px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
       font-weight: bold;
-      margin-bottom: 10px;
-      color: #34495e;
     }
 
-    .intro {
-      font-size: 1em;
-      color: #555;
-    }
-
-    .sub-photos {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .sub-photos img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s ease;
-    }
-
-    .sub-photos img:hover {
-      transform: scale(1.1);
+    .login-box button:hover {
+      background-color: #1f5f8b;
     }
   </style>
 </head>
 <body>
 
-  <h1>Meet My Family</h1>
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter username" required>
+    <input type="password" id="password" placeholder="Enter password" required>
+    <button onclick="login()">Login</button>
+  </div>
 
-  <div class="family-container">
-    <!-- Father Section with Sub-Photos -->
-    <div class="member">
-      <img src="father.jpg" alt="My Father">
-      <div class="name">Mr. [dhirendra kumar pandey]</div>
-      <div class="intro">My father is the pillar of strength in our family. He is hardworking, wise, and always supportive.</div>
-      <div class="sub-photos">
-        <img src="father1.jpg" alt="Father sub photo 1">
-        <img src="father2.jpg" alt="Father(3).jpg">
-        <img src="father3.jpg" alt="father(4).jpg">
-      </div>
-    </div>
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
 
-    <!-- Mother Section with Sub-photos -->
-    <div class="member">
-      <img src="mother.jpg" alt="My Mother">
-      <div class="name">Mrs. [reena pandey</div>
-      <div class="intro">My mother is the heart of our home. She is kind, caring, and always spreads love wherever she goes.</div>
-      <div class="sub-photos">
-        <img src="mother1.jpg" alt="mother sub photo1">
-        <img src="mother2.jpg" alt="mother sub photo2">
-        <img src="mother3.jpg" alt="mother sub photo3">
-      </div>
-   </div>
-
-    <!-- Brother Section with sub photos -->
-    <div class="member">
-      <img src="brother.jpg" alt="My Brother">
-      <div class="name">[shikhar pandey]</div>
-      <div class="intro">My brother is my best friend and biggest supporter. He is fun, intelligent, and always there for me.</div>
-      <div class="sub-photos">
-        <img src="brother1.jpg" alt="brother sub photo1">
-        <img src="brother2.jpg" alt="brother sub photo2">
-        <img src="brother3.jpg" alt="brother sub photo3">
-      </div>
-    </div>
+      if (user === "user" && pass === "1234") {
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid username or password!");
+      }
+    }
+  </script>
 
 </body>
 </html>
